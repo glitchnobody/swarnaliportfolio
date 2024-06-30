@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  cursor: none;
+}
+
+body {
+  @apply bg-neutral-50  selection:bg-slate-900/40;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+img {
+  -webkit-user-select: none !important; /* Chrome 49+ */
+  -moz-user-select: none !important; /* Firefox 43+ */
+  -ms-user-select: none !important; /* No support yet */
+  user-select: none !important;
+}
