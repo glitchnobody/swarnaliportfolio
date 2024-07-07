@@ -22,3 +22,15 @@ img {
   -ms-user-select: none !important; /* No support yet */
   user-select: none !important;
 }
+
+.masonry-grid {
+  /* This creates the masonry effect */
+  column-count: 2;
+  column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 4; /* Increase the column count for larger screens */
+  }
+}

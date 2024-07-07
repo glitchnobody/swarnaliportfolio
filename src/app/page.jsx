@@ -11,6 +11,38 @@ import Img1 from '../images/1.jpg';
 import Img2 from '../images/2.jpg';
 import Img3 from '../images/3.jpg';
 
+import Image1 from '../images/image1.jpg';
+import Image2 from '../images/image2.jpg';
+import Image3 from '../images/image3.jpg';
+import Image4 from '../images/image4.jpg';
+import Image5 from '../images/image5.jpg';
+import Image6 from '../images/image6.jpg';
+import Image7 from '../images/image7.jpg';
+import Image8 from '../images/image8.jpg';
+import Image9 from '../images/image9.jpg';
+import Image10 from '../images/image10.jpg';
+import Image11 from '../images/image11.jpg';
+import Image12 from '../images/image12.jpg';
+import Image13 from '../images/image13.jpg';
+import Image14 from '../images/image14.jpg';
+import Image15 from '../images/image15.jpg';
+import Image16 from '../images/image16.jpg';
+import Image17 from '../images/image17.jpg';
+import Image18 from '../images/image18.jpg';
+import Image19 from '../images/image19.jpg';
+import Image20 from '../images/image20.jpg';
+import Image21 from '../images/image21.jpg';
+import Image22 from '../images/image22.jpg';
+import Image23 from '../images/image23.jpg';
+import Image24 from '../images/image24.jpg';
+import Image25 from '../images/image25.jpg';
+import Image26 from '../images/image26.jpg';
+import Image27 from '../images/image27.jpg';
+import Image28 from '../images/image28.jpg';
+import Image29 from '../images/image29.jpg';
+import Image30 from '../images/image30.jpg';
+import Image31 from '../images/image31.jpg';
+
 export default function Home() {
   const { contextSafe } = useGSAP();
   const heroHeadingLine1 = useRef();
@@ -31,6 +63,9 @@ export default function Home() {
   const upcoming = useRef();
   const tl = useRef();
 
+  const [currentImage, setCurrentImage] = useState('Image1');
+  const [isOpen, setIsOpen] = useState(false);
+
   const [imageIndex, setImageIndex] = useState(0);
 
   const images = [Img0, Img1, Img2, Img3];
@@ -39,6 +74,40 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
     gsap.registerPlugin(TextPlugin);
   }
+
+  const galleryImages = [
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+    Image9,
+    Image10,
+    Image11,
+    Image12,
+    Image13,
+    Image14,
+    Image15,
+    Image16,
+    Image17,
+    Image18,
+    Image19,
+    Image20,
+    Image21,
+    Image22,
+    Image23,
+    Image24,
+    Image25,
+    Image26,
+    Image27,
+    Image28,
+    Image29,
+    Image30,
+    Image31,
+  ];
 
   useGSAP(
     () => {
@@ -146,8 +215,8 @@ export default function Home() {
       text: 'As a Kathak dancer, I aim to perpetuate and innovate within this classical form, bridging traditional aesthetics with contemporary interpretations. My journey is not only about personal achievement but also about contributing to the global appreciation and understanding of Indian classical dance.',
       scrollTrigger: {
         trigger: introContainer.current,
-        start: 'top 20% ',
-        end: 'bottom 70%',
+        start: 'top 10% ',
+        end: 'bottom 80%',
         scrub: true,
       },
     });
@@ -261,42 +330,156 @@ export default function Home() {
         ref={introContainer}
         className=' flex h-screen w-full items-center justify-center overflow-hidden bg-black px-20'
       >
-        <p
-          className='  flex  size-full items-center justify-center  text-left text-4xl text-white'
-          ref={textInPutIntro}
-        ></p>
+        <div className=' h-[25rem] w-full md:h-60'>
+          <p
+            className='  flex  size-full   text-left text-2xl text-white md:text-4xl'
+            ref={textInPutIntro}
+          ></p>
+        </div>
       </div>
 
-      <section
-        ref={selectionGallery}
-        className=' my-14 h-[calc(100dvh-80px)]   w-full'
-      ></section>
       <section ref={upcoming} className=' my-10 w-full px-3 '>
         <div className=' mx-auto w-full max-w-screen-2xl'>
-          <div className=' flex flex-col gap-10 md:flex-row md:items-center md:justify-between'>
-            <div className=' flex flex-col gap-4'>
-              <h2 className=' flex flex-col overflow-hidden text-4xl md:text-6xl'>
-                <span className='fadeFromBelow  '>Upcoming</span>
-                <span className=' fadeFromBelow  pb-2 font-black'>
-                  Projects
-                </span>
-              </h2>
+          <div className=' relative flex flex-col gap-10 md:flex-row  '>
+            <div className=' flex flex-col gap-4 md:sticky md:top-20 md:h-full'>
+              <div className=' h-fit  '>
+                <h2 className=' flex flex-col overflow-hidden text-4xl md:text-6xl'>
+                  <span className='fadeFromBelow  '>Experience &</span>
+                  <span className=' fadeFromBelow  pb-2 font-black'>
+                    Achievements
+                  </span>
+                </h2>
+              </div>
             </div>
-            <div className=' flex w-full max-w-xl flex-col   overflow-hidden text-sm  font-normal  text-neutral-800  md:text-base'>
-              <p className=' fadeIn  '>
-                SR Group specializes in residential and commercial projects and
-                maintains our on-time delivery commitment. Our layouts, crafted
-                in compliance with Good Vastu and Feng Shui principles, ensure
-                harmony and prosperity for your family. Lastly, along with good
-                transparency with our clients, we uphold high compliance with
-                all real estate laws, maintaining our longstanding reputation
-                for integrity and trust.
-              </p>
+            <div className=' flex w-full flex-col  border-l-black/20 text-sm   font-normal   text-neutral-800  md:border-l  md:pl-2  md:text-base'>
+              <div className=' fadeIn   '>
+                <span className=' text-2xl font-bold'>Competitions :</span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    First place in multiple national-level Kathak competitions
+                    including RUHANIYAT’20, ADAA, TAAL-TARANG’21, and LASYA -
+                    University of Delhi.
+                  </li>
+                  <li>
+                    Second place at MOOD INDIGO - IIT Bombay Asia’s largest
+                    student festival (2020) and at the District Branch of
+                    Haryana State Council for Child Welfare sponsored Indian
+                    Classical Solo Competition (2018).
+                  </li>
+                </ul>
+              </div>
+
+              <div className=' fadeIn mt-10  '>
+                <span className=' text-2xl font-bold'>
+                  International Performances :
+                </span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    Performed in Romania and Bulgaria with a group led by her
+                    teacher Smt. Leena Malakar Vij sponsored by the Indian
+                    Council of Cultural Relations (ICCR) under the Ministry of
+                    External Affairs in collaboration with the Embassy of India
+                    to Romania and Bulgaria.
+                  </li>
+                  <li>
+                    Participated in the 19th Global Female Folk Dance
+                    Competition and Carnival (2018).
+                  </li>
+                  <li>
+                    Worked in a Kathak Documentary in Alaap Studios in Sri
+                    Lanka, Colombo (2017).
+                  </li>
+                </ul>
+              </div>
+
+              <div className=' fadeIn mt-10  '>
+                <span className=' text-2xl font-bold'>
+                  Cultural Festivals :
+                </span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    G20 Spouse Programme at the National Gallery of Modern Art
+                    (2023).
+                  </li>
+                  <li>Deepotsav, Ayodhya (2022).</li>
+                  <li>Sanskrit Bharati Festival, Harinagar (2022)</li>
+                </ul>
+              </div>
+
+              <div className=' fadeIn mt-10  '>
+                <span className=' text-2xl font-bold'>Performances :</span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    National and international stages, including Rashtriya Ekta
+                    Diwas and Bal Kala Utsav.
+                  </li>
+                  <li>
+                    Collaborations with notable platforms like Artskalpataru at
+                    The Ankur Festival and Spirit of Bharatham on Instagram and
+                    Swar Laya Chhand on Facebook.
+                  </li>
+                  <li>
+                    D.A.V United Festival - Indira Gandhi National Centre for
+                    the Arts, Janpath, New Delhi.
+                  </li>
+                  <li>
+                    Performed in a kathak Production &quot;BEEJ-Aahat Aur Anahat
+                    Naad&quot; supported by the Ministry of Culture, curated by
+                    Smt. Leena Malakar Vij.
+                  </li>
+                </ul>
+              </div>
+
+              <div className=' fadeIn mt-10  '>
+                <span className=' text-2xl font-bold'>
+                  Teaching and Judging :
+                </span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    Judge at DPS, Sector-17, and DAV Public School, Sector-37,
+                    in solo dance competitions (2021).
+                  </li>
+                  <li>
+                    Assistant to Smt. Leena Malakar Vij in Spic Macay workshops.
+                  </li>
+                </ul>
+              </div>
+
+              <div className=' fadeIn mt-10  '>
+                <span className=' text-2xl font-bold'>Memberships :</span>
+                <ul className='ml-4 list-outside list-disc'>
+                  <li>
+                    NUPUR: Ex - Member of Indian Classical Dance Society at KNC,
+                    DU.
+                  </li>
+                  <li>Kathik Cultural Society of India: Active member.</li>
+                  <li>
+                    Indian Dance Society - Advanced Team: University of
+                    Manchester.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className='  mx-auto w-full max-w-screen-2xl'></section>
+      <section className='  mx-auto w-full max-w-screen-2xl'>
+        <div className=' h-fit  '>
+          <h2 className=' flex flex-col overflow-hidden text-4xl md:text-6xl'>
+            <span className=' fadeFromBelow  pb-2 font-black'>Gallery</span>
+            <div className='masonry-grid'>
+              {galleryImages.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  className='mb-4 object-contain'
+                  alt='Swarnali Nag'
+                />
+              ))}
+            </div>
+          </h2>
+        </div>
+      </section>
     </main>
   );
 }
