@@ -49,7 +49,7 @@ export default function GlobalButton({ children, className, ...props }) {
       ref={buttonRef}
       type={props.type || 'button'}
       onClick={props.onClick}
-      className={`${className} ' cursorHide   group   relative cursor-none    bg-neutral-900  text-neutral-200 transition-transform duration-200  hover:text-neutral-900 active:scale-90 active:text-neutral-200 `}
+      className={`${className} ' cursorHide   group   relative cursor-none    bg-neutral-900  text-neutral-200 transition-transform duration-200  active:scale-90 active:text-neutral-200 `}
       {...props}
     >
       <span className=' pointer-events-none relative z-20'>{children}</span>
@@ -59,7 +59,7 @@ export default function GlobalButton({ children, className, ...props }) {
         style={{
           clipPath: 'circle(0% at 50% 50%)',
         }}
-        className={`    group-active:outline-neutral-100' absolute left-0  top-0 z-10  size-full rounded-full bg-orange-600   outline  -outline-offset-1 outline-orange-600 transition-[background-color,outline] duration-200  `}
+        className={`    group-active:outline-neutral-100' absolute left-0  top-0 z-10  size-full rounded-full bg-[#803D3B]   outline  -outline-offset-1 outline-[#803D3B] transition-[background-color,outline] duration-200  `}
       ></span>
     </button>
   );

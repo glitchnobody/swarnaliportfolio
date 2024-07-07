@@ -7,125 +7,18 @@ import { useEffect, useRef, useState } from 'react';
 import GlobalButton from './GlobalButton';
 
 export default function GlobalNavBar() {
-  const pathname = usePathname();
-
-  const [navOpen, setNavOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(false);
 
   const { contextSafe } = useGSAP();
 
   const navRef = useRef();
-  const customCursor = useRef();
+
   const navMenu = useRef();
-  const firstDash = useRef();
-  const secondDash = useRef();
-  const thirdDash = useRef();
+
   const navMenuContainer = useRef();
-  const tl = useRef();
+
   const tl2 = useRef();
-  const NavBg = useRef();
-
-  const onClickMenu = contextSafe(() => {
-    tl.current = gsap.timeline();
-
-    setNavOpen(!navOpen);
-    if (navOpen) {
-      gsap.to([firstDash.current, secondDash.current, thirdDash.current], {
-        duration: 0.3,
-        y: 0,
-        rotation: 0,
-        opacity: 1,
-        ease: 'power2.inOut',
-      });
-      tl.current
-        .to(navMenu.current, {
-          duration: 1,
-          clipPath: 'circle(0% at 99% 2%)',
-          ease: 'power2.inOut',
-        })
-        .to(
-          '#line',
-          {
-            duration: 0.5,
-            width: 0,
-            ease: 'power2.inOut',
-          },
-          '>-0.2',
-          {
-            scope: navMenuContainer,
-          }
-        )
-        .to(
-          '#menuItem',
-          {
-            duration: 0.5,
-
-            opacity: 0,
-            ease: 'power2.inOut',
-          },
-          '>-0.2',
-          {
-            scope: navMenuContainer,
-          }
-        );
-    } else {
-      gsap.to(firstDash.current, {
-        duration: 0.3,
-        y: 5,
-        rotation: 45,
-        ease: 'power2.inOut',
-      });
-      gsap.to(secondDash.current, {
-        duration: 0.3,
-        opacity: 0,
-        ease: 'power2.inOut',
-      });
-      gsap.to(thirdDash.current, {
-        duration: 0.3,
-        y: -6,
-        rotation: -45,
-        ease: 'power2.inOut',
-      });
-      tl.current
-        .to(navMenu.current, {
-          duration: 0.7,
-          clipPath: 'circle(200% at 99% 2%)',
-          ease: 'power2.inOut',
-        })
-        .to(
-          '#line',
-          {
-            duration: 0.5,
-            width: '100%',
-            ease: 'power2.inOut',
-            stagger: {
-              each: 0.2,
-            },
-          },
-          '>-0.6',
-          {
-            scope: navMenuContainer,
-          }
-        )
-        .to(
-          '#menuItem',
-          {
-            duration: 0.5,
-
-            opacity: 1,
-            ease: 'power2.inOut',
-            stagger: {
-              each: 0.2,
-            },
-          },
-          '>-1.2',
-          {
-            scope: navMenuContainer,
-          }
-        );
-    }
-  });
 
   useGSAP(() => {
     gsap.set(navRef.current, {
@@ -151,39 +44,6 @@ export default function GlobalNavBar() {
         }),
           (animate = false);
       }
-    });
-  }, []);
-
-  useGSAP(() => {
-    gsap.set(navRef.current, {
-      y: -150, // Adjust this value as needed
-      opacity: 0,
-    });
-    gsap.set(navMenu.current, {
-      clipPath: 'circle(0% at 99% 2%)',
-    });
-    gsap.set(
-      '#line',
-      {
-        width: 0,
-      },
-      { scope: navMenuContainer }
-    );
-    gsap.set(
-      '#menuItem',
-      {
-        opacity: 0,
-      },
-      { scope: navMenuContainer }
-    );
-
-    // Animate to final position
-    gsap.to(navRef.current, {
-      duration: 0.75,
-      delay: 0.5,
-      y: 0,
-      opacity: 1,
-      ease: 'power2.In',
     });
   }, []);
 
@@ -303,7 +163,7 @@ export default function GlobalNavBar() {
             <GlobalButton
               className={` h-full whitespace-nowrap rounded-full   px-4 text-lg font-light transition-all duration-300 ease-in-out md:px-6  `}
             >
-              Let&apos;s Talk
+              Contact
             </GlobalButton>
           </Link>
         </div>
