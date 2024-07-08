@@ -16,18 +16,18 @@ export default function GlobalFooter() {
           <div className=' w-full md:max-w-2xl'>
             <span className=' text-4xl font-bold'>Contact Me</span>
             <div className='  mt-20 flex w-full  flex-col gap-7'>
-              <div className=' grid grid-cols-2'>
+              <div className=' grid md:grid-cols-2'>
                 <span>Address:</span>
                 <span className=' flex flex-col gap-4'>
                   Room number G 115, Uttley House, Chancellors Way, Fallowfield,
                   Manchester M146NN
                 </span>
               </div>
-              <div className=' grid grid-cols-2'>
+              <div className=' grid md:grid-cols-2'>
                 <span>Phone:</span>
                 <span>+44 0788469329</span>
               </div>
-              <div className=' grid grid-cols-2'>
+              <div className=' grid md:grid-cols-2'>
                 <span>Email:</span>
                 <span>swarnalinag.kathak09@gmail.com</span>
               </div>
