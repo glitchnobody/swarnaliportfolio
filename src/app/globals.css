@@ -31,6 +31,12 @@ img {
 
 @media (min-width: 768px) {
   .masonry-grid {
+    column-count: 3; /* Increase the column count for larger screens */
+  }
+}
+
+@media (min-width: 1040px) {
+  .masonry-grid {
     column-count: 4; /* Increase the column count for larger screens */
   }
 }

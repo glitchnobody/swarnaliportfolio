@@ -241,6 +241,29 @@ export default function Home() {
   };
   return (
     <main ref={homeRef}>
+      {
+        isOpen && (
+          <div
+            onClick={() => setIsOpen(false)}
+            className='fixed  left-0 top-0 z-50 flex size-full items-center justify-center bg-black '
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              className='absolute right-20   top-20 p-4 text-white'
+            >
+              Close
+            </button>
+            <div className='relative h-[85dvh] w-[85vw] '>
+              <Image
+                src={currentImage}
+                layout='fill'
+                objectFit='contain'
+                alt='Swarnali Nag'
+              />
+            </div>
+          </div>
+        ) // Display the modal if isOpen is true
+      }
       <section
         ref={heroSection}
         className='flex h-dvh w-full items-end justify-center overflow-hidden bg-[#dbd5c9]  '
@@ -338,7 +361,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section ref={upcoming} className=' my-10 w-full px-3 '>
+      <section id='about' ref={upcoming} className=' my-10 w-full px-3 '>
         <div className=' mx-auto w-full max-w-screen-2xl'>
           <div className=' relative flex flex-col gap-10 md:flex-row  '>
             <div className=' flex flex-col gap-4 md:sticky md:top-20 md:h-full'>
@@ -463,15 +486,22 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='  mx-auto w-full max-w-screen-2xl'>
+      <section id='gallery' className='  mx-auto w-full max-w-screen-2xl'>
         <div className=' h-fit  '>
           <h2 className=' flex flex-col overflow-hidden text-4xl md:text-6xl'>
             <span className=' fadeFromBelow  pb-2 font-black'>Gallery</span>
-            <div className='masonry-grid'>
+            <div className='masonry-grid mt-10 px-2'>
               {galleryImages.map((image, index) => (
                 <Image
                   key={index}
                   src={image}
+                  onClick={
+                    () => {
+                      setCurrentImage(image);
+                      setIsOpen(true);
+                    }
+                    // Set the current image and open the modal
+                  }
                   className='mb-4 object-contain'
                   alt='Swarnali Nag'
                 />
